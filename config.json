@@ -1,0 +1,121 @@
+{
+    "name": "Eternal",
+    "version": "1.0.0",
+    "author": "Decade",
+    "repository": "https://github.com/Decade/gridea-theme-Eternal",
+    "customConfig": [
+      {
+        "name": "coverTitle",
+        "label": "封面标题",
+        "group": "封面",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "coverSubtitle",
+        "label": "封面次标题",
+        "group": "封面",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "postsubTitle",
+        "label": "文章次标题",
+        "group": "文章",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "valineComment",
+        "label": "valine评论(为空表示不开启)",
+        "group": "评论",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "valineAppId",
+        "label": "appId",
+        "group": "评论",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "valineAppKey",
+        "label": "appKey",
+        "group": "评论",
+        "value": "",
+        "type": "input",
+        "note": ""
+      },
+      {
+        "name": "github",
+        "label": "Github",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "twitter",
+        "label": "Twitter",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "weibo",
+        "label": "微博",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "zhihu",
+        "label": "知乎",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "facebook",
+        "label": "Facebook",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "comment-dots",
+        "label": "Email",
+        "group": "社交",
+        "value": "",
+        "type": "input",
+        "note": "链接地址"
+      },
+      {
+        "name": "customCss",
+        "label": "自定义CSS",
+        "group": "自定义样式",
+        "value": "",
+        "type": "textarea",
+        "note": ""
+      },
+      {
+        "name": "Todolist",
+        "label": "Todolist页面(为空表示不开启)",
+        "group": "其他",
+        "value": "",
+        "type": "input",
+        "note": ""
+      }
+    ]
+  }
+  

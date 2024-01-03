@@ -1,0 +1,85 @@
+<div class="site-header-container nav-transparent">
+  <div class="site-header">
+    <div class="left">
+      <a href="<%= themeConfig.domain %>">
+        <img class="avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt=""
+          width="32px" height="32px">
+      </a>
+      <a href="<%= themeConfig.domain %>">
+        <h1 class="site-title">
+          <%= themeConfig.siteName %>
+        </h1>
+      </a>
+    </div>
+    <div class="right">
+        <div class="menu">
+            <a href="/post/about" v-if="headSearchShow">
+                <i class="fa-solid fa-user"></i>&nbsp;个人
+            </a>
+            <a href="/archives" v-if="headSearchShow">
+                <i class="fa-solid fa-box-archive"></i>&nbsp;归档
+            </a>
+            <a href="/tags" v-if="headSearchShow">
+                <i class="fa-solid fa-tag"></i>&nbsp;标签
+            </a>
+            <a href="/life" v-if="headSearchShow">
+                <i class="fa-fw fas fa-heart"></i>&nbsp;生活
+            </a>
+            <% if (site.customConfig.Todolist) {%>
+                <a href="/post/t-do-list" v-if="headSearchShow">
+                    <i class="fa-solid fa-list-check"></i>&nbsp;计划
+                </a>
+              <% } %>
+        </div>
+      <div class="gridea-search-div" v-if="headSearchShow">
+        <form id="gridea-search-form" action="<%= themeConfig.domain %>/search/">
+          <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q" />
+        </form>
+      </div>
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }"
+          @click="menuClick()" v-if="menuSearchShow"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      <div class="gridea-search-div" v-if="menuSearchShow">
+        <form id="gridea-search-form" action="<%= themeConfig.domain %>/search/">
+          <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q" />
+        </form>
+      </div>
+      <% menus.forEach(function(menu) { %>
+        <% if (menu.openType==='External' ) { %>
+          <a class="menu purple-link" href="<%= menu.link %>" class="menu" target="_blank">
+            <%= menu.name %>
+          </a>
+          <% } else { %>
+            <a href="<%= menu.link %>" class="menu purple-link">
+              <%= menu.name %>
+            </a>
+            <% } %>
+              <% }); %>
+              <% if (site.customConfig.Todolist) {%>
+              <a href="/post/t-do-list" class="menu purple-link">
+                计划
+            </a>
+            <% } %>
+    </div>
+  </div>
+</transition>
+
+<script>
+    window.onscroll = function () {
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var header = document.querySelector('.site-header-container');
+        if (t > 0) {
+            header.classList.remove('nav-transparent');
+        } else {
+            header.classList.add('nav-transparent');
+        }
+    }
+</script>

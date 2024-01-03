@@ -1,0 +1,13 @@
+<div class="site-footer">
+  <div class="slogan"><%- themeConfig.siteDescription %></div>
+  <div class="social-container">
+    <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook', 'comment-dots'].forEach((item) => { %>
+      <% if (site.customConfig[item]) { %>
+        <a href="<%= site.customConfig[item] %>" target="_blank">
+          <i class="fab fa-<%= item %>"></i>
+        </a>
+      <% } %>
+    <% }) %>
+  </div>
+  <%- themeConfig.footerInfo %> | <a href="https://github.com/Decade-qiu/gridea-theme-Eternal" target="_blank">Powered by Eternal</a> | <a href="<%= themeConfig.domain %>/atom.xml" target="_blank">RSS</a>
+</div>

@@ -1,0 +1,14 @@
+<script src="<%= themeConfig.domain %>/media/scripts/index.js"></script>
+
+<% if (typeof site !=='undefined' && site.customConfig.valineComment) { %>
+    <script src='<%= themeConfig.domain %>/media/scripts/valine.min.js'></script>
+    <script>
+        new Valine({
+            el: '#gitalk-container',
+            appId: '<%= site.customConfig.valineAppId %>',
+            appKey: '<%= site.customConfig.valineAppKey %>',
+            placeholder: 'Write something...',
+        })
+    </script>
+<% } %>
+

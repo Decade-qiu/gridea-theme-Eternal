@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle: `${tag.name} | ${themeConfig.siteName}` }) %>
+  </head>
+  <body>
+    <%- include('./includes/cover') %>
+    <div id="app" class="main">
+      <%- include('./includes/header') %>
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> <%= tag.name %>
+          </h2> 
+        </div>
+
+        <%- include('./includes/post-list') %>
+
+      </div>
+
+    
+
+    </div>
+    <%- include('./includes/footer') %>
+    <%- include('./includes/scripts') %>
+  </body>
+</html>

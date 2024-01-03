@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+  </head>
+  <body>
+    <%- include('./includes/cover') %>
+    <!-- <div class="recommend-container"> -->
+    <!-- </div> -->
+    <div id="app" class="main">             
+      <%- include('./includes/header') %>
+      <a name="content"></a>
+      <div class="content-container">
+        <%- include('./includes/post-list') %>
+      </div>
+
+    </div>
+    <%- include('./includes/footer') %>
+    <%- include('./includes/scripts') %>
+  </body>
+</html>

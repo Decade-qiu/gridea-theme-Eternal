@@ -1,0 +1,9 @@
+<!-- <% recommend = posts.filter(post => post.isTop) %> -->
+<% recommend = posts.filter(()=>true).slice(0, 4) %>
+<% recommend.forEach(function(post) {%>
+    <div class="recommend-card">
+        <div class="recommend-cover">
+            <img src="<%= post.feature %>">
+        </div>
+    </div>
+<% }) %>

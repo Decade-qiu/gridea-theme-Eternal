@@ -1,0 +1,203 @@
+pre {
+    font-size: 14px !important;
+    word-spacing: normal !important;
+}
+
+#write {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+    color: var(--alice-font-color);
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+
+strong {
+    color: #a22a2a !important;
+    font-weight: bold !important;
+}
+
+code:not([class]) {
+    background: rgba(235, 235, 235, 0.35) !important;
+    color: #48b456 !important;
+    padding: 0 5px !important;
+    margin: 0 2px !important;
+    font-family: co !important;
+    border-radius: 5px !important;
+}
+
+code[class] {
+    background-color: #E6E6FA !important;
+    border: 2px solid burlywood !important;
+}
+
+li::marker {
+    color: #059CEF !important;
+}
+
+li {
+    color: #535277 !important;
+}
+
+.md-toc {
+    border-radius: 5px;
+    border: 1px solid;
+    margin: 27px 0 47px 0;
+    padding: 10px 0;
+}
+
+blockquote {
+    box-sizing: border-box !important;
+    margin: 1.6em 0 !important;
+    padding: 0 0 0 1.2em !important;
+    border-left: 4px solid #16b0ff !important;
+    color: #888888 !important;
+    min-height: 20px !important;
+}
+
+li.task-list-not-done>input[type="checkbox"] {
+    cursor: pointer !important;
+    border: 1px solid #ccc !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+    margin: 7px 1px 1px -28px !important;
+}
+
+li.task-list-done>input[type="checkbox"] {
+    cursor: pointer !important;
+    border: 1px solid #ccc !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+    margin: 7px 1px 1px -28px !important;
+}
+
+li.task-list-not-done>p>span[md-inline="strong"]::before {
+    content: "⏳";
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+li.task-list-done>p>span:first-child:before {
+    content: "🏆";
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.ul-list>li {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* gridea */
+ul.contains-task-list li::marker {
+    content: '';
+}
+
+ul.contains-task-list>li.task-list-item>p>strong+label {
+    display: none;
+}
+
+ul.contains-task-list>li.task-list-item>strong+label {
+    display: none;
+}
+
+ul.contains-task-list>li.task-list-item>p>del>label {
+    display: none;
+}
+
+ul.contains-task-list>li.task-list-item>del>label {
+    display: none;
+}
+
+/* checkbox */
+li.task-list-item input[type="checkbox"] {
+    cursor: pointer !important;
+    border: 1px solid #ccc !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+    margin: 7px 1px 1px 10px !important;
+}
+
+/* indent */
+li.task-list-item>p {
+    margin: auto;
+}
+
+li.task-list-item ul.contains-task-list {
+    margin-left: 13px;
+}
+
+ul.contains-task-list {
+    margin: auto;
+}
+
+/* to do list emoji */
+/* delete */
+li.task-list-item del {
+    margin-left: 13px;
+}
+
+/* not checked but doing*/
+li.task-list-item strong::before {
+    content: "⏳ ";
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+li.task-list-item>p>input[type="checkbox"]+strong::before {
+    content: "⏳ ";
+    margin-left: 13px;
+    font-size: 18px;
+}
+
+li.task-list-item>p>strong {
+    margin-left: -5px;
+}
+
+/* not checked also not start*/
+li.task-list-item>input[type="checkbox"]+label::before {
+    content: "";
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+li.task-list-item>label {
+    margin-left: 8px;
+}
+
+li.task-list-item>p>input[type="checkbox"]+label::before {
+    content: "";
+    margin-left: 13px;
+    font-size: 18px;
+}
+
+/* checked*/
+li.task-list-item>input[checked="checked"]+label::before {
+    content: "🏆 ";
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+li.task-list-item>p>input[checked="checked"]+label::before {
+    content: "🏆 ";
+    margin-left: 13px;
+    font-size: 18px;
+}
