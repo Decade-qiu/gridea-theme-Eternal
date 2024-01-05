@@ -1,8 +1,10 @@
 <%- outputInfo();%><%  -%>
 <%
 function refineInfo(str){
-   return str.replace(/(<(\/?)(\w+)[^>]*>)|(<!--[\s\S]*?-->)/g ,'')//去除html标签如<p></p>和注释
-   .replace(/\s+/g,' ')//压缩空格换行等只保留一个空格
+    // console.log(str);
+    return str;
+//    return str.replace(/(<(\/?)(\w+)[^>]*>)|(<!--[\s\S]*?-->)/g ,'')//去除html标签如<p></p>和注释
+//    .replace(/\s+/g,' ')//压缩空格换行等只保留一个空格
 }
 
 function outputInfo(){
@@ -22,7 +24,7 @@ site.posts.forEach(function(post, index){
          //content:post.content,//防止文件过大，尽量不选，在./api-content.ejs中已包含
          fileName:post.fileName,
          abstract:post.abstract,
-         description:refineInfo(post.description),
+        //  description:refineInfo(post.description),
          title:post.title,
          tags:post.tags,
          feature:post.feature,

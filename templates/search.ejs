@@ -7,8 +7,8 @@
     <%- include('./includes/head', { siteTitle: `搜索 | ${themeConfig.siteName}` }) %>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.0/dist/fuse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.3/ejs.min.js"></script>
-    <script src="https://decade.net.cn/media/gridea-search/gridea-search.js"></script>
-    <script src="https://decade.net.cn/media/gridea-search/result-template.ejs" type="text/ejs"></script>
+    <script src="<%= themeConfig.domain %>/media/gridea-search/gridea-search.js"></script>
+    <script src="<%= themeConfig.domain %>/media/gridea-search/result-template.ejs" type="text/ejs"></script>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             color: red;
         }
     </style>
-    <%- include('./includes/cover') %>
+    <%- include('./includes/search-cover') %>
     <div id="app" class="main">
         <%- include('./includes/header') %>
         <div class="content-container">

@@ -1,0 +1,63 @@
+<div class="carousel carousel-slider center index-cover" data-indicators="true">
+    <div class="bg-cover" style="background: url('<%= themeConfig.domain %>/images/cover.jpg?v=<%= site.utils.now %>') no-repeat center center fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                    <div class="brand">
+                        <div class="title center-align">
+                            <%= site.customConfig.coverTitle %>
+                        </div>
+                        <div class="description center-align">
+                            <span id="subtitle" data-subtitle="<%= site.customConfig.coverSubtitle %>"><%= site.customConfig.coverSubtitle %></span><span class="typed-cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cover-btns">
+                <a href="#content" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+            </div>
+            <div class="cover-social-link">
+                <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook', 'comment-dots'].forEach((item) => { %>
+                    <% if (site.customConfig[item]) { %>
+                      <a href="<%= site.customConfig[item] %>" target="_blank">
+                        <i class="fab fa-<%= item %>"></i>
+                      </a>
+                    <% } %>
+                  <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        let cover = document.querySelector('.bg-cover');
+        if (document.location.pathname !== '/'){
+            cover.classList.add('pd-header');
+            let btns = document.querySelector('.cover-btns');
+            let social = document.querySelector('.cover-social-link');
+            btns.classList.add('hide');
+            social.classList.add('hide');
+        }
+        var subtitle = document.querySelector("#subtitle");
+        var text = subtitle.dataset.subtitle;
+        var typed = new Typed("#subtitle", {
+            strings: [ 
+                
+                    "hhhhhhhhhhhh",
+                
+                    text,
+                
+            ],
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+    });
+</script>
+
