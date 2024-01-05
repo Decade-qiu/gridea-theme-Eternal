@@ -1,6 +1,6 @@
 # 主题下载
 
-只需将本项目下载到本地 gridea 主题文件夹下（一般是.\Documents\Gridea\themes\），然后只保留以下部分即可。
+👍只需将本项目下载到本地 gridea 主题文件夹下（一般是.\Documents\Gridea\themes\），然后只保留以下部分即可。
 ![image](https://github.com/Decade-qiu/gridea-theme-Eternal/assets/74434779/edc53bd0-a790-4963-aece-f8130eba82ad)
 
 
