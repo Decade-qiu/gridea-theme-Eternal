@@ -93,8 +93,8 @@
         "note": "链接地址"
       },
       {
-        "name": "comment-dots",
-        "label": "Email",
+        "name": "bilibili",
+        "label": "b站",
         "group": "社交",
         "value": "",
         "type": "input",
