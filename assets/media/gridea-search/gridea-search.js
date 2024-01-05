@@ -30,9 +30,9 @@
     //填充搜索输入框
     function fillSearchInput() {
         var searchForm = document.getElementById('gridea-search-form');
-        console.log(searchForm);
+        // console.log(searchForm);
         var searchInput = searchForm.getElementsByTagName('input')[0];
-        console.log(searchInput);
+        // console.log(searchInput);
         searchInput.value = getQueryPhrase();
     }
 
@@ -96,7 +96,7 @@
         }
         else {
             ajax({
-                url: '../api-content',
+                url: '../api-content/index.html',
                 success: function (data) {
                     console.log(data);
                     callback(JSON.parse(data));
@@ -114,7 +114,7 @@
         }
         else {
             ajax({
-                url: '../api-info',
+                url: '../api-info/index.html',
                 success: function (data) {
                     callback(JSON.parse(data));
                     localStorage.setItem('InfosCache', data);
@@ -222,7 +222,7 @@
                 // console.log(infos);
                 // console.log(searchedContents);
                 var searchedInfos = getResult(infos, searchedContents);
-                console.log(JSON.stringify(searchedInfos));
+                // console.log(JSON.stringify(searchedInfos));
                 renderResult(searchedInfos);
             });
         }

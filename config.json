@@ -115,6 +115,14 @@
         "value": "",
         "type": "input",
         "note": ""
+      },
+      {
+        "name": "postCover",
+        "label": "是否为文章生成随机封面(为空表示不开启)",
+        "group": "其他",
+        "value": "",
+        "type": "input",
+        "note": ""
       }
     ]
   }
