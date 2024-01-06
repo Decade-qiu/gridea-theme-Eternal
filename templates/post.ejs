@@ -98,4 +98,13 @@
             main.classList.remove('main-small');
         }
     });
+    window.addEventListener('resize', function() {
+        // 获取屏幕宽度
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+        // 设置 .content-card 的 max-width
+        var contentCard = document.querySelector('.content-card');
+        contentCard.style.maxWidth = screenWidth + 'px';
+    });
+    // 初始加载时执行一次，确保初始状态下也设置正确
+    window.dispatchEvent(new Event('resize'));
 </script>
