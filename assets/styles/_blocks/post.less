@@ -1,6 +1,146 @@
+.content-body {
+    display: flex;
+    .clear {
+        margin: 0px auto 20px auto;
+    }
+}
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 18px;
+    width: 50px;
+    height: 50px;
+    z-index: 998;
+    cursor: pointer;
+    .bg-color {
+        background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, 15%), 0 5px 15px rgba(0, 0, 0, 15%), 0 2px 5px -5px rgba(0, 0, 0, 10%) !important;
+    }
+    .fa-list-ul:before {
+        content: "\f0ca";
+        display: inline-block;
+        margin: 12px;
+        font-size: 26px;
+        color: #fff;
+        font-family: FontAwesome;
+    }
+}
+
+.toc::-webkit-scrollbar {
+    width: 1px;
+}   
+
+.toc {
+    overflow-y: auto;
+    position: absolute;
+    max-width: 200px;
+    max-height: 420px;
+    top: 400px;
+    left: 1030px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #12ad71;
+    // box-shadow: 0 15px 35px rgba(50, 50, 93, 20%), 0 5px 15px rgba(0, 0, 0, 17%) !important;
+}
+
+.toc-fixed {
+    position: fixed;
+    top: 160px;
+    left: 1030px;
+}
+
+.toc-body::before{
+    content: '\f022     TOC';
+    font-family: FontAwesome;
+    color: #34495e;
+    margin: 15px 0 15px 0;
+    padding-left: 2px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    position: absolute;
+    top: 350px;
+    left: 1030px;
+}
+.toc-body-fixed::before {
+    content: '\f022     TOC';
+    display: inline-block;
+    font-family: FontAwesome;
+    color: #34495e;
+    margin: 15px 0 15px 0;
+    padding-left: 2px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    position: fixed;
+    top: 100px;
+    left: 1030px;
+}
+
+.toc>.toc-list {
+    overflow: hidden;
+    position: relative
+}
+
+.toc>.toc-list li {
+    list-style: none
+}
+
+.toc-list {
+    margin: 0;
+    padding-left: 10px
+}
+.toc-list .toc-list-item {
+    margin: 12px auto;
+}
+
+a.toc-link {
+    color: currentColor;
+    height: 100%
+}
+
+.is-collapsible {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out
+}
+
+.is-collapsed {
+    max-height: 0
+}
+
+.toc-list .is-active-link {
+    font-weight: 700;
+    color: #54BC4B;
+}
+
+.toc-link::before {
+    content: ' ';
+    display: inline-block;
+    height: 1.5em;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    width: 2px
+}
+
+.is-active-link::before {
+    background-color: #54BC4B
+}
+
+// 屏幕小于900px时，隐藏floating-toc-btn
+@media (max-width: 900px) {
+    #floating-toc-btn {
+        display: none;
+    }
+}
+
 .content-card {
     .post-detail {
-        padding: 48px 16px 32px 16px;
+        padding: 18px 16px 32px 16px;
         margin-top: -110px !important;
         z-index: 1023;
         box-shadow: 0 10px 35px 2px rgba(0, 0, 0, 15%), 0 5px 15px rgba(0, 0, 0, 7%), 0 2px 5px -5px rgba(0, 0, 0, 10%) !important;
@@ -22,6 +162,7 @@
 
     .post-detail-info {
         padding: 0 0 32px;
+        font-size: large;
     }
 
     .feature-container {
@@ -35,7 +176,8 @@
 
 .next-post {
     text-align: center;
-    margin-top: 48px;
+    margin-top: 28px;
+
     .post-title {
         display: inline-block;
         font-size: 22px;

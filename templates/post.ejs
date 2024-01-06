@@ -3,45 +3,51 @@
 <html>
   <head>
     <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.5.0/tocbot.min.js"></script>
   </head>
   <body>
     <%- include('./includes/post-cover') %>
+    <div class="toc-body hide">  
+        <div class="toc"></div>
+    </div>
+    <div id="floating-toc-btn">
+        <i class="fas fa-list-ul bg-color"></i>
+    </div>
     <div id="app" class="main">
       <%- include('./includes/header') %>
 
-      <div class="content-container content-card">
-        <div class="post-detail">
-          <h2 class="post-title"><%= post.title %></h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> <%= post.dateFormat %></span>
-            <% if (post.tags.length > 0) { %>
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                <% post.tags.forEach(function(tag, index) { %>
-                  <a href="<%= tag.link %>">
-                    <%= tag.name %>
-                    <% if (index !== post.tags.length - 1) { %>
-                      ，
-                    <% } %>
+      <div class="content-body">
+        <div class="content-container content-card">
+            <div class="post-detail">
+              <div class="post-info post-detail-info">
+                <span><i class="icon-calendar-outline"></i> <%= post.dateFormat %></span>
+                <% if (post.tags.length > 0) { %>
+                  <span>
+                    <% post.tags.forEach(function(tag, index) { %>
+                        <i class="icon-pricetags-outline"></i>
+                      <a href="<%= tag.link %>">
+                        <%= tag.name %>
+                      </a>
+                    <% }); %>
+                  </span>
+                <% } %>
+              </div>
+              <hr class="clear">
+              <div class="post-content">
+                <%- post.content %>
+              </div>
+              <hr class="clear">
+              <% if (post.nextPost && !post.hideInList) { %>
+                <div class="next-post">
+                  <a class="purple-link" href="<%= post.nextPost.link %>">
+                    <h3 class="post-title">
+                      下一篇：<%= post.nextPost.title %>
+                    </h3>
                   </a>
-                <% }); %>
-              </span>
-            <% } %>
+                </div>
+                <% } %>
+            </div>
           </div>
-          <div class="post-content">
-            <%- post.content %>
-          </div>
-        </div>
-
-        <% if (post.nextPost && !post.hideInList) { %>
-          <div class="next-post">
-            <a class="purple-link" href="<%= post.nextPost.link %>">
-              <h3 class="post-title">
-                下一篇：<%= post.nextPost.title %>
-              </h3>
-            </a>
-          </div>
-          <% } %>
       </div>
 
       <% if (typeof site !=='undefined' && site.customConfig.valineComment) { %>
@@ -54,3 +60,42 @@
     <%- include('./includes/scripts') %>
   </body>
 </html>
+
+<script>
+    let id = 1;
+    let post_content = document.querySelector('.content-card');
+    post_content.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (item) {
+        item.setAttribute('id', 'toc-' + id);
+        id++;
+    });
+    tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3',
+        headingsOffset: 58,
+    });
+    // 检测页面滚动距离 用eventlistener
+    window.addEventListener('scroll', function () {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let toc = document.querySelector('.toc');
+        let tocBtn = document.querySelector('.toc-body');
+        if (scrollTop > 250) {
+            tocBtn.classList.add('toc-body-fixed');
+            toc.classList.add('toc-fixed');
+        } else {
+            tocBtn.classList.remove('toc-body-fixed');
+            toc.classList.remove('toc-fixed');
+        }
+    });
+    document.querySelector('#floating-toc-btn').addEventListener('click', function () {
+        let toc = document.querySelector('.toc-body');
+        let main = document.querySelector('.main');
+        if (toc.classList.contains('hide')) {
+            main.classList.add('main-small');
+            toc.classList.remove('hide');
+        } else {
+            toc.classList.add('hide');
+            main.classList.remove('main-small');
+        }
+    });
+</script>

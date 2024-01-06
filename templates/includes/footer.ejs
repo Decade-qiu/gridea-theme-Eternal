@@ -1,5 +1,4 @@
 <div class="site-footer">
-  <div class="slogan"><%- themeConfig.siteDescription %></div>
   <div class="social-container">
     <% ['github', 'twitter', 'weibo', 'facebook', 'bilibili', 'zhihu'].forEach((item) => { %>
       <% if (site.customConfig[item]) { %>
@@ -9,5 +8,6 @@
       <% } %>
     <% }) %>
   </div>
-  <%- themeConfig.footerInfo %> | <a href="https://github.com/Decade-qiu/gridea-theme-Eternal" target="_blank">Powered by Eternal</a> | <a href="<%= themeConfig.domain %>/atom.xml" target="_blank">RSS</a>
+  <div class="slogan"><%- themeConfig.siteDescription %></div> |
+  <a href="https://github.com/Decade-qiu/gridea-theme-Eternal" target="_blank"><%- themeConfig.footerInfo %></a> | <a href="https://github.com/Decade-qiu/gridea-theme-Eternal" target="_blank">Powered by Eternal</a> | <a href="<%= themeConfig.domain %>/atom.xml" target="_blank">RSS</a>
 </div>
