@@ -62,49 +62,51 @@
 </html>
 
 <script>
-    let id = 1;
-    let post_content = document.querySelector('.content-card');
-    post_content.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (item) {
-        item.setAttribute('id', 'toc-' + id);
-        id++;
+    window.addEventListener('onload', function() {
+        let id = 1;
+        let post_content = document.querySelector('.content-card');
+        post_content.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (item) {
+            item.setAttribute('id', 'toc-' + id);
+            id++;
+        });
+        tocbot.init({
+            tocSelector: '.toc',
+            contentSelector: '.post-content',
+            headingSelector: 'h1,h2,h3',
+            headingsOffset: 58,
+        });
+        // 检测页面滚动距离 用eventlistener
+        window.addEventListener('scroll', function () {
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            let toc = document.querySelector('.toc');
+            let tocBtn = document.querySelector('.toc-body');
+            if (scrollTop > 250) {
+                tocBtn.classList.add('toc-body-fixed');
+                toc.classList.add('toc-fixed');
+            } else {
+                tocBtn.classList.remove('toc-body-fixed');
+                toc.classList.remove('toc-fixed');
+            }
+        });
+        document.querySelector('#floating-toc-btn').addEventListener('click', function () {
+            let toc = document.querySelector('.toc-body');
+            let main = document.querySelector('.main');
+            if (toc.classList.contains('hide')) {
+                main.classList.add('main-small');
+                toc.classList.remove('hide');
+            } else {
+                toc.classList.add('hide');
+                main.classList.remove('main-small');
+            }
+        });
+        window.addEventListener('resize', function() {
+            // 获取屏幕宽度
+            var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+            // 设置 .content-card 的 max-width
+            var contentCard = document.querySelector('.content-card');
+            contentCard.style.maxWidth = screenWidth + 'px';
+        });
+        // 初始加载时执行一次，确保初始状态下也设置正确
+        window.dispatchEvent(new Event('resize'));
     });
-    tocbot.init({
-        tocSelector: '.toc',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3',
-        headingsOffset: 58,
-    });
-    // 检测页面滚动距离 用eventlistener
-    window.addEventListener('scroll', function () {
-        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        let toc = document.querySelector('.toc');
-        let tocBtn = document.querySelector('.toc-body');
-        if (scrollTop > 250) {
-            tocBtn.classList.add('toc-body-fixed');
-            toc.classList.add('toc-fixed');
-        } else {
-            tocBtn.classList.remove('toc-body-fixed');
-            toc.classList.remove('toc-fixed');
-        }
-    });
-    document.querySelector('#floating-toc-btn').addEventListener('click', function () {
-        let toc = document.querySelector('.toc-body');
-        let main = document.querySelector('.main');
-        if (toc.classList.contains('hide')) {
-            main.classList.add('main-small');
-            toc.classList.remove('hide');
-        } else {
-            toc.classList.add('hide');
-            main.classList.remove('main-small');
-        }
-    });
-    window.addEventListener('resize', function() {
-        // 获取屏幕宽度
-        var screenWidth = window.innerWidth || document.documentElement.clientWidth;
-        // 设置 .content-card 的 max-width
-        var contentCard = document.querySelector('.content-card');
-        contentCard.style.maxWidth = screenWidth + 'px';
-    });
-    // 初始加载时执行一次，确保初始状态下也设置正确
-    window.dispatchEvent(new Event('resize'));
 </script>
