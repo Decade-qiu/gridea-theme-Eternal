@@ -62,7 +62,7 @@
 </html>
 
 <script>
-    window.addEventListener('onload', function() {
+    window.onload = function() {
         let id = 1;
         let post_content = document.querySelector('.content-card');
         post_content.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (item) {
@@ -108,5 +108,5 @@
         });
         // 初始加载时执行一次，确保初始状态下也设置正确
         window.dispatchEvent(new Event('resize'));
-    });
+    };
 </script>
