@@ -34,7 +34,7 @@
               </div>
               <hr class="clear">
               <div class="post-content">
-                <%- post.content.split('<!-- more -->')[1] %>
+                <%- post.content.includes('<!-- more -->') ? post.content.split('<!-- more -->')[1] : post.content %>
               </div>
               <hr class="clear">
               <% if (post.nextPost && !post.hideInList) { %>
