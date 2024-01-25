@@ -32,6 +32,11 @@
                   </span>
                 <% } %>
               </div>
+              <% if (post.content.includes('<!-- more -->')) { %>
+                <div class="post-card-abstract">
+                    <%- post.content.split('<!-- more -->')[0] %>
+                  </div>
+                <% } %>
               <hr class="clear">
               <div class="post-content">
                 <%- post.content.includes('<!-- more -->') ? post.content.split('<!-- more -->')[1] : post.content %>

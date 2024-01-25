@@ -1,7 +1,7 @@
 .content-body {
     display: flex;
     .clear {
-        margin: 0px auto 20px auto;
+        margin: 20px auto 20px auto;
     }
 }
 #floating-toc-btn {
@@ -161,7 +161,7 @@ a.toc-link {
     }
 
     .post-detail-info {
-        padding: 0 0 32px;
+        padding: 0 0 16px;
         font-size: large;
     }
 
@@ -171,6 +171,42 @@ a.toc-link {
         background-position: center;
         border-radius: 2px;
         box-shadow: 0 0 30px #eee;
+    }
+
+    .post-card-abstract {
+        line-height: 1.5em;
+        max-height: 4.5em;
+        text-align: justify;
+        margin-right: -1em;
+        padding-right: 1em;
+        font-size: 16px;
+        margin: 16px 0 8px;
+        flex: 1;
+        color: #34495e;
+        overflow: hidden;
+        position: relative;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        strong {
+            font-weight: bolder;
+        }
+
+        a {
+            font-weight: 600;
+            background: linear-gradient(180deg, transparent 70%, rgba(101, 125, 225, .4) 0);
+        }
+
+        code {
+            padding: 0 3px;
+            margin: 0 2px;
+            background: rgba(195, 195, 195, 0.41);
+            font-size: 0.9em;
+            border-radius: 2px;
+        }
+
     }
 }
 
