@@ -1,9 +1,11 @@
 .content-body {
     display: flex;
+
     .clear {
         margin: 20px auto 20px auto;
     }
 }
+
 #floating-toc-btn {
     position: fixed;
     right: 20px;
@@ -12,6 +14,7 @@
     height: 50px;
     z-index: 998;
     cursor: pointer;
+
     .bg-color {
         background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
         width: 100%;
@@ -19,6 +22,7 @@
         border-radius: 50%;
         box-shadow: 0 10px 35px 2px rgba(0, 0, 0, 15%), 0 5px 15px rgba(0, 0, 0, 15%), 0 2px 5px -5px rgba(0, 0, 0, 10%) !important;
     }
+
     .fa-list-ul:before {
         content: "\f0ca";
         display: inline-block;
@@ -31,7 +35,7 @@
 
 .toc::-webkit-scrollbar {
     width: 1px;
-}   
+}
 
 .toc {
     overflow-y: auto;
@@ -52,7 +56,7 @@
     left: 1030px;
 }
 
-.toc-body::before{
+.toc-body::before {
     content: '\f022     TOC';
     font-family: FontAwesome;
     color: #34495e;
@@ -65,6 +69,7 @@
     top: 350px;
     left: 1030px;
 }
+
 .toc-body-fixed::before {
     content: '\f022     TOC';
     display: inline-block;
@@ -93,6 +98,7 @@
     margin: 0;
     padding-left: 10px
 }
+
 .toc-list .toc-list-item {
     margin: 12px auto;
 }
@@ -140,7 +146,7 @@ a.toc-link {
 
 .content-card {
     .post-detail {
-        padding: 18px 16px 32px 16px;
+        padding: 18px 36px 32px 36px;
         margin-top: -110px !important;
         z-index: 1023;
         box-shadow: 0 10px 35px 2px rgba(0, 0, 0, 15%), 0 5px 15px rgba(0, 0, 0, 7%), 0 2px 5px -5px rgba(0, 0, 0, 10%) !important;
@@ -152,7 +158,6 @@ a.toc-link {
 }
 
 .post-detail {
-    padding: 32px 0;
 
     .post-title {
         font-size: 32px;
@@ -367,6 +372,15 @@ a.toc-link {
         padding-left: 24px;
         line-height: 1.725;
         margin-bottom: 16px;
+        list-style-type: decimal;
+
+        ol {
+            list-style-type: lower-alpha;
+        }
+
+        ul {
+            list-style-type: lower-alpha;
+        }
     }
 
     strong {
